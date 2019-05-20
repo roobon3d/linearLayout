@@ -1,5 +1,6 @@
 package basico.android.cftic.edu.milinear;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +21,6 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
 
 
         Spinner spinner = (Spinner) findViewById(R.id.mispinner);
-
 
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -58,6 +58,17 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
         Log.d("MIAPP", "TOCADO " + pos);
+
+        switch (pos){
+            case  0:
+                Intent intent0 = new Intent(this, NumberPickerActivity.class);
+                startActivity(intent0);
+                break;
+            case 1:
+                Intent intent1 = new Intent(this, LinearActivity.class);
+                startActivity(intent1);
+                break;
+        }
 
 
 
