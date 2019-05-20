@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,100 +11,129 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="33"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
         <LinearLayout
-            android:id="@+id/zelda1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="50"
-            android:background="@color/colorAzul"
-            android:orientation="horizontal"
-            android:onClick="cambiaColor"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="33"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
 
-            <!--<TextView
-                android:id="@+id/textViewCaja1"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/zelda1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@color/colorAzul"
+                android:onClick="dividirPantalla"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:id="@+id/textViewCaja1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="CAJA 1"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="50sp" />-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/zelda2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@color/colorBlanco"
+                android:onClick="dividirPantalla"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:id="@+id/textViewCaja2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="CAJA 2"
+                    android:textSize="50sp" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="33"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="dividirPantalla"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/contador"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="CAJA 1"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:text="0"
                 android:textColor="@color/colorBlanco"
-                android:textSize="50sp" />-->
-
+                android:textSize="30sp" />
         </LinearLayout>
+
 
         <LinearLayout
-            android:id="@+id/zelda2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="50"
-            android:background="@color/colorBlanco"
-            android:orientation="horizontal"
-            android:onClick="cambiaColor"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="33"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
 
-            <!--<TextView
-                android:id="@+id/textViewCaja2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="CAJA 2"
-                android:textSize="50sp" />-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="333"
+                android:background="@color/colorBlanco"
+                android:onClick="dividirPantalla"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="333"
+                android:background="@color/colorRojo"
+                android:onClick="dividirPantalla"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="333"
+                android:background="@color/colorAzulcielo"
+                android:onClick="dividirPantalla">
+
+            </LinearLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 
-
-    <LinearLayout
+    <ImageButton
+        android:id="@+id/boton_empezar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="33"
-        android:background="@color/colorPrimaryDark"
-        android:onClick="cambiaColor"
-        android:orientation="horizontal">
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:alpha="0.8"
+        android:onClick="empezarPartida"
+        app:srcCompat="@drawable/play" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="33"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="333"
-            android:onClick="cambiaColor"
-            android:background="@color/colorBlanco">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="333"
-            android:onClick="cambiaColor"
-            android:background="@color/colorRojo">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="333"
-            android:onClick="cambiaColor"
-            android:background="@color/colorAzulcielo">
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</FrameLayout>

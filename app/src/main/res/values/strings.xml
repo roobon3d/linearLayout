@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MiLinear</string>
+    <string name="infinito">Infinito</string>
+    <string name="original">Original</string>
 </resources>
