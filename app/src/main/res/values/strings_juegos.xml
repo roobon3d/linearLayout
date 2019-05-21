@@ -3,6 +3,8 @@
 <resources>
     <string-array
         name="array_juegos">
+        <!-- <item
+             >"Elige juego"</item>-->
         <item
             >"infinito"</item>
         <item

@@ -101,7 +101,7 @@ public class MainActivitySplitFernando extends AppCompatActivity {
         // +++++ Colores aleatorios dentro de un array ya definido ++++++
 
         Random rand = new Random();
-        int pos = rand.nextInt(COLORES.length + 1);
+        int pos = rand.nextInt(COLORES.length);
         randomColor = getResources().getColor(COLORES[pos]);
 
         return randomColor;

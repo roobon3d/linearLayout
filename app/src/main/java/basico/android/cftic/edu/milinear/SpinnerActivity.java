@@ -20,17 +20,26 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_spinner);
 
 
-        Spinner spinner = (Spinner) findViewById(R.id.mispinner);
+        Spinner spinner = (Spinner) findViewById(R.id.mispinner); // Spinner es un desplegable
 
-// Create an ArrayAdapter using the string array and a default spinner layout
+
+    // El adapter es un proveedor de datos
+
+    //Crear un ArrayAdapter usando un recurso con array de strings (dentro de string_juegos.xml)y un layout spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.array_juegos, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+                R.array.array_juegos, android.R.layout.simple_spinner_item); // simple_spinner_item es el estilo
+
+    // Especificar el layout a usar cuando la lista aparece
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+
+    //Aplicar el adaptador al spinner
         spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(this);
+        spinner.setSelected(false);
+        spinner.setSelection(0,false);
+
+        spinner.setOnItemSelectedListener(this); // se debe implementar AdapterView.OnItemSelectedListener en la clase
+
 
    /*   El método createFromResource() te permite crear un ArrayAdapter a partir de la matriz de strings.
         El tercer argumento para este método es un recurso de diseño que define la manera en que se muestra
@@ -60,13 +69,15 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
         Log.d("MIAPP", "TOCADO " + pos);
 
         switch (pos){
-            case  0:
+            case 0:
                 Intent intent0 = new Intent(this, NumberPickerActivity.class);
                 startActivity(intent0);
+                Log.d("MIAPP", "LANZADO NUMBERPICKER");
                 break;
             case 1:
                 Intent intent1 = new Intent(this, LinearActivity.class);
                 startActivity(intent1);
+                Log.d("MIAPP", "LANZADO LinearActivity");
                 break;
         }
 
