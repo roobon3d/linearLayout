@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -35,26 +36,21 @@ public class NumberPickerActivity extends AppCompatActivity {
 
     }
 
-        /*numberpicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-
-
-                textview.setText("Valor es : " + newVal);
-
-                lanzarPantalla(newVal);
-
-            }
-
-
-        });*/
 
 
 
     private void lanzarPantalla(int veces){
 
+        EditText nombreUsuario = findViewById(R.id.nombreUsuarioId);
+        String nombre = nombreUsuario.getText().toString();
+
+
+
+
         Intent intent = new Intent(this, MainActivitySplitFernando.class);
         intent.putExtra("NTOKES", veces);
+        intent.putExtra("NOMBREJUGADOR", nombre);
+
         startActivity(intent);
 
     }

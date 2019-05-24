@@ -13,5 +13,10 @@
         android:id="@+id/original"
         app:showAsAction="always"
         android:title="Version Original" />
+    <item
+        android:icon="@drawable/ic_pause_circle_outline_black_24dp"
+        android:id="@+id/pausa"
+        app:showAsAction="always"
+        android:title="Pausa" />
 
 </menu>

@@ -35,7 +35,7 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
     //Aplicar el adaptador al spinner
         spinner.setAdapter(adapter);
 
-        spinner.setSelected(false);
+        // spinner.setSelected(false);
         spinner.setSelection(0,false);
 
         spinner.setOnItemSelectedListener(this); // se debe implementar AdapterView.OnItemSelectedListener en la clase
@@ -69,12 +69,12 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
         Log.d("MIAPP", "TOCADO " + pos);
 
         switch (pos){
-            case 0:
+            case 1:
                 Intent intent0 = new Intent(this, NumberPickerActivity.class);
                 startActivity(intent0);
                 Log.d("MIAPP", "LANZADO NUMBERPICKER");
                 break;
-            case 1:
+            case 2:
                 Intent intent1 = new Intent(this, LinearActivity.class);
                 startActivity(intent1);
                 Log.d("MIAPP", "LANZADO LinearActivity");

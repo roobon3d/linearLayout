@@ -74,6 +74,16 @@ public class LinearActivity extends AppCompatActivity {
                 mensaje_toast2.show();
 
                 break;
+            case R.id.pausa:
+                Log.d("MIAPP", "tocó Pausa");
+                //lanzar la version Original
+
+                Intent intentPausa = new Intent(this, PauseActivity.class);
+                startActivity(intentPausa);
+
+                Toast mensaje_toast_pausa = Toast.makeText(this, "Pausa", Toast.LENGTH_LONG);
+                mensaje_toast_pausa.show();
+                break;
 
             default:
                 Log.d("MIAPP", "tocó id desconocido");
@@ -90,9 +100,6 @@ public class LinearActivity extends AppCompatActivity {
 
         ColorDrawable viewColor = (ColorDrawable) view.getBackground();
         int colorId = viewColor.getColor();
-
-
-
 
 
         Log.d("MIAPP", "Color = " + colorId);

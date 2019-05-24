@@ -27,6 +27,11 @@ public class MainActivitySplitFernando extends AppCompatActivity {
     private static final int MAX_HIJOS = 5;
 
 
+    private long tiempoInicial;
+    private long tiempoFinal;
+    private String usuario;
+
+
     // ************ onCreate *************
 
     @Override
@@ -34,8 +39,13 @@ public class MainActivitySplitFernando extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_split_fernando);
 
+
+        tiempoInicial = System.currentTimeMillis();
+
         Intent intent_creador = getIntent();
         this.nToques = intent_creador.getIntExtra("NTOKES", 3);
+        this.usuario = intent_creador.getStringExtra("NOMBREJUGADOR");
+
 
     }
 
@@ -75,6 +85,17 @@ public class MainActivitySplitFernando extends AppCompatActivity {
                 mensaje_toast2.show();
 
                 break;
+            case R.id.pausa:
+                Log.d("MIAPP", "tocó Pausa");
+                //lanzar la version Original
+
+                Intent intentPausa = new Intent(this, PauseActivity.class);
+                startActivity(intentPausa);
+
+                Toast mensaje_toast_pausa = Toast.makeText(this, "Pausa", Toast.LENGTH_LONG);
+                mensaje_toast_pausa.show();
+                break;
+
 
             default:
                 Log.d("MIAPP", "tocó id desconocido");
@@ -265,7 +286,14 @@ public class MainActivitySplitFernando extends AppCompatActivity {
 
     private void salir() {
 
-        Toast mensaje_toast = Toast.makeText(this, "Se acabó..." + contadorToques, Toast.LENGTH_LONG);
+        tiempoFinal = System.currentTimeMillis();
+        long tiempoTotal = (tiempoFinal-tiempoInicial)/1000;
+
+
+
+
+
+        Toast mensaje_toast = Toast.makeText(this, "Se acabó..." + contadorToques + " toques en " + tiempoTotal + " Segundos", Toast.LENGTH_LONG);
         mensaje_toast.show();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
